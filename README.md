@@ -1,4 +1,3 @@
-# FirstRepo
-my first repository 
+# BackUpRepo
 
-I am a beginner in coding,so "HELLO WORLD!!!" 
+To Sync Markdown Notes and other Useful Things
