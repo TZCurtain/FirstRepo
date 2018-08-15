@@ -1,0 +1,56 @@
+SSD＋HDD
+
+Structure:
+HDD:
+-Videos
+-Pics
+SSD: 
+-Games
+-Docs
+	-Novels
+		
+	-Documents
+-Downloads
+-Musics
+	-SelfMusic
+		-A
+		-B
+		-Z
+			-AlbumName
+			-SongName
+	-QQMusic
+	-NeteaseMusic
+	...
+-Software
+-Codes
+	-JarBackUps
+	-maven-repository
+	-Workspaces
+-Works
+	-ProjectName
+
+Games：VNR、Steam、Wegame、Battle.net
+Software:
+	听歌看视频：FooBar2K、QQMusic、NeteaseMusic、Potplayer、射手影音
+	阅读：Calibre、PDFElement/极速阅读器、HoneyView
+	词典：GoldenDict
+	浏览器：Chrome、Firefox、Tor
+	效率实用工具：
+		AiO Runtimes、Clover/Listary、SnipPaste、Daemon Tools、BeyondNote、Wox(Everything)、Ditto
+	下载：
+		IDM / Free Download Manager、uTorrent、Pandownloader?
+	解压缩：Bandizip
+	编程及辅助工具：Jetbrains IDEA + Pycharm + Velocity + DOSBOX + MySQL + Redis + VS?
+	编程环境配置: 
+		Java(maven + spring + struts + hibernate + mybatits) + C/C++(Qt? + Eigen?) + Python(pip + anaconda) + Git + MATLAB 
+	终端：MobaXterm Pro 
+	文本编辑器: VS Code
+	办公写作：Office全家桶 + Typora + XMind
+	聊天：QQ/Tim、Wechat、Telegram、AliWangwang
+	科学上网：SS、Lantern
+	虚拟机、模拟器：VMWare、网易MuMu	
+	存储: jianguoyun/OneDrive
+	安全软件: 火绒
+
+
+
