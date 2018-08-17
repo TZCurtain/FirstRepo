@@ -114,7 +114,7 @@ final主要是拒绝继承。确保String的不可变性
 
 
 ## 反射机制的用途、应用
-
+	JDBC、工厂模式、分析类文件
 
 ## 反射中，Class.forName和classloader的区别
 	Class.forName将类的.class文件中加载到JVM中，且会执行雷州的static块。
@@ -133,13 +133,15 @@ final主要是拒绝继承。确保String的不可变性
 	StringBuilder 非线程安全的字符串变量	
 ## 异常的结构，运行时异常和非运行时异常，各举个例子
 
-14. String a= “abc” String b = “abc” String c = new String(“abc”) String d = “ab” + “c” .他们之间用 == 比较的结果
+## String a= “abc” String b = “abc” String c = new String(“abc”) String d = “ab” + “c” .他们之间用 == 比较的结果
 	a = b = d 不等于 c
     因为new String会在堆中创建新的字符串，而不去管字符串内存池
     而字符串常量或字符串常量之间的拼接则会先去字符串常量池找。
     可以使用字符串的intern方法。该方法检查常量池中是否有该字符串的值的引用，如果没有就加入常量池
     
-16. Java 的引用类型有哪几种
+##  Java 的引用类型有哪几种
+强引用、软引用、弱引用、虚引用
+
 
 ## java的基础类型和字节大小。
 double、long 8
@@ -351,7 +353,6 @@ http://www.itdadao.com/2016/02/20/402713/
 五、开源框架
 
 1. hibernate和mybatis的区别
-
 2. 讲讲mybatis的连接池。
 
 3. spring框架中需要引用哪些jar包，以及这些jar包的用途
