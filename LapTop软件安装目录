@@ -29,7 +29,10 @@ SSD:
 -Works
 	-ProjectName
 
-Games：VNR、Steam、Wegame、Battle.net
+Games：
+	VNR
+		CurtainBackup
+	Steam、Wegame、Battle.net
 Software:
 	听歌看视频：
 		FooBar2K
@@ -46,11 +49,13 @@ Software:
 			https://www.computerbase.de/downloads/systemtools/all-in-one-runtimes/
 		Clover/Listary、SnipPaste、Daemon Tools、BeyondNote、Wox(Everything)、Ditto
 	下载：
-		IDM / Free Download Manager、uTorrent、Pandownloader?
+		IDM / Free Download Manager、uTorrent、
+		Pandownloader
+			CurtainBackup
 	解压缩：Bandizip
 	编程及辅助工具：Jetbrains IDEA + Pycharm + Velocity + DOSBOX + MySQL + Redis + VS?
 	编程环境配置: 
-		Java(maven + spring + struts + hibernate + mybatits) + C/C++(Qt? + Eigen?) + Python(pip + anaconda) + Git + MATLAB 
+		Java(maven + spring + struts + hibernate + mybatis) + C/C++(Qt? + Eigen?) + Python(pip + anaconda) + Git + MATLAB 
 	终端：MobaXterm Pro 
 	文本编辑器: VS Code
 	办公写作：Office全家桶 + Typora + XMind
