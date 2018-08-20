@@ -31,19 +31,18 @@ SSD:
 
 Games：
 	VNR
-		CurtainBackup
 	Steam、Wegame、Battle.net
 Software:
-	desktop dock :https://www.zhihu.com/question/41347945/answer/90844665
+	桌面美化: https://www.zhihu.com/question/41347945/answer/90844665
 	听歌看视频：
-		FooBar2K、
+		FooBar2K(foobaka or foobaka-alpha-gabuli)、
 		QQMusic、NeteaseMusic、
 		Potplayer、射手影音
 	阅读：Calibre、PDFElement/极速阅读器、HoneyView
 	词典：GoldenDict
-	浏览器：Chrome、Firefox、Tor
+	浏览器：Chrome、Tor
 	效率实用工具：
-		Clover/Listary、SnipPaste、Daemon Tools、BeyondNote、Wox(Everything)、Ditto
+		Clover、SnipPaste、Daemon Tools、BeyondNote、Wox(Everything)、Listary、Ditto、FormatFactory
 	下载：
 		IDM / Free Download Manager、
 		transmission、
@@ -53,11 +52,11 @@ Software:
 	编程及辅助工具：Jetbrains IDEA + Pycharm + Velocity + DOSBOX + MySQL + Redis + VS?
 	编程环境配置: 
 		Java(maven + spring + struts + hibernate + mybatis) + C/C++(Qt? + Eigen?) + Python(pip + anaconda) + Git + MATLAB 
-	终端：Bash shell/ MobaXterm Pro 
+	终端：Bash shell / XShell / Cmder
 	文本编辑器: VS Code
-	办公写作：Office全家桶 + Typora + XMind + foxmail
+	办公写作：Office全家桶 + Typora/CMDMarkdown + XMind + foxmail
 	聊天：Tim、Wechat、Telegram、AliWangwang
-	科学上网：SS、Lantern
+	科学上网：SS、XXVPN
 	虚拟机、模拟器：VMWare、网易MuMu	
 	存储: jianguoyun/OneDrive
 	安全软件: 火绒
