@@ -3,12 +3,14 @@ SSD＋HDD
 Structure:
 HDD:
 -Videos
+	-Movies
+	-Courses
 -Pics
 SSD: 
 -Games
+	-GameUtils
 -Docs
 	-Novels
-		
 	-Documents
 -Downloads
 -Musics
@@ -29,29 +31,36 @@ SSD:
 -Works
 	-ProjectName
 
-Games：
-	VNR
-	Steam、Wegame、Battle.net
+Games:	
+	Battle.net(war3 + sc2 + hearthstone)、
+	FIFA 18、
+	Gals、
+	NBA2k(13 + 14 + 18)、
+	Steam、
+	Touhou Project、
+	VNR、
+	Winkawks、Wegame
 Software:
 	桌面美化: https://www.zhihu.com/question/41347945/answer/90844665
 	听歌看视频：
 		FooBar2K(foobaka or foobaka-alpha-gabuli)、
 		QQMusic、NeteaseMusic、
-		Potplayer、射手影音
+		Potplayer
 	阅读：Calibre、PDFElement/极速阅读器、HoneyView
 	词典：GoldenDict
 	浏览器：Chrome、Tor
 	效率实用工具：
 		Clover、SnipPaste、Daemon Tools、BeyondNote、Listary、Ditto、FormatFactory
 	下载：
-		IDM / Free Download Manager、
+		Free Download Manager、
 		transmission、
 		Pandownloader
-			CurtainBackup
 	解压缩：7-Zip 
-	编程及辅助工具：Jetbrains IDEA + Pycharm + Velocity + DOSBOX + MySQL + Redis + VS?
+	编程及辅助工具：
+		Jetbrains(IDEA + Pycharm + Goland + CLion) 
+		Velocity + DOSBOX +  + Redis + VS?
 	编程环境配置: 
-		Java(maven + spring + struts + hibernate + mybatis) + C/C++(Qt? + Eigen?) + Python(pip + anaconda) + Git + MATLAB 
+		Java(maven + spring + struts + hibernate + mybatis) + C/C++(Qt? + Eigen?) + Go + Python(pip + anaconda) + Git + MATLAB + MySQL 
 	终端：Bash shell / XShell / Cmder
 	文本编辑器: VS Code
 	办公写作：Office全家桶 + Typora/CMDMarkdown/Yu Writer + XMind + foxmail
