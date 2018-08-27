@@ -112,6 +112,8 @@ Long、Integer等的equals方法首先判断传入的参数类型是不是和他
 ==在有一个操作数是表达式时，看的是值，而都不是表达式时看指向的是不是同一个对象
 **if (username.equals("xxx")){...}有什么不妥之处**
 username可能为空，应该使用"xxxx".equals(username)
+**两个对象值相同(x.equals(y) == true)，但却可有不同的hash code，这句话对不对?**
+对。实现的时候可以通过重写实现
 ### Java异常机制
 	Java把异常当做对象处理，定义了它的基类java.lang.Throwable作为所有异常的超类，Java中的异常分为两大类:Error & Exception。
 	Error一般指JVM相关的问题，如系统崩溃、虚拟机出错、动态链接失败等。应用程序通常无法处理这些错误，无需捕获
