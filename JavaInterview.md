@@ -542,16 +542,111 @@ PreparedStatement接口代表预编译的语句，可以增强安全性，且批
 6. jsp和servlet的区别
 ### 可以自己定义新的http请求方式么
 	是可以的，但是例如Tomcat的Servlet只接受传统的那些HTTP请求(GET、HEAD、POST...)，虽然你可以通过实现你自己的DispatcherServlet，重写service方法来让它能够接受你自定义的请求方式。
-## 框架相关
-1. hibernate和mybatis的区别
-2. 讲讲mybatis的连接池。
-3. spring框架中需要引用哪些jar包，以及这些jar包的用途
-4. springMVC的原理
-5. springMVC注解的意思
-6. spring中beanFactory和ApplicationContext的联系和区别
-7. spring注入的几种方式（循环注入）
-8. spring如何实现事物管理的
-9. springIOC
-10. spring AOP的原理
-11. hibernate中的1级和2级缓存的使用方式以及区别原理（Lazy-Load的理解）
-12. Hibernate的原理体系架构，五大核心接口，Hibernate对象的三种状态转换，事务管理。
+### hibernate和mybatis的区别
+hibernate的移植性比mybatis更好。hibernate通过强大的映射结构与hql语言，降低了对象与数据库之间的耦合性，而mybatis需要手写sql语句，所以如果sql不具有通用性而使用了许多数据库特性，移植性也会受到很大影响
+hibernate拥有完整的日志系统，mybatis则欠缺一些，只有基本的sql记录功能
+sql直接优化上，mybatis由于是手写的，比较方便优化。
+### 讲讲mybatis的数据源和连接池
+MyBatis将数据源分为三类：UNPOOLED(不使用连接池)、POOLED(使用连接池)、JNDI(使用JNDI实现的数据源)
+java.sql.UnpooledDataSource、PooledDataSource
+**数据源的创建**
+在xml配置文件中
+``` xml
+<dataSource type="POOLED">
+            <property name="driver" value="com.mysql.jdbc.Driver"/>
+            <property name="url" value="jdbc:mysql://127.0.0.1:3306/testdb" />
+            <property name="username" value="root"/>
+            <property name="password" value="newpass"/>
+</dataSource>
+```
+MyBatis通过抽象工厂接口DataSourceFactory来创建数据源对象，分别有对应的Pooled/Unpooled/JndiDataSourceFactory
+**连接(java.sql.Connection)对象的创建**
+lazy load
+直到我们需要执行sql语句的时候，才会创建java.sql.Connection对象
+**dataSrouce.getConnection()**
+对于Unpooled，它将user和password封装到props里后通过java.sql.DriverManager.getConnection()获取连接对象
+对于连接池
+getConnection会去调用popConnection方法
+该方法首先查看是否有空闲的PooledConnection对象，如果有，就直接返回一个可用的PooledcConnection对象。
+如果没有就再去查看池中的ActiveConnection是否已满，没有满就新创建一个PooledConnection对象，然后放到ActiveConnection中。
+如果ActiveConnection也满了，就去看最先进入的PooledConnection对象是否已经过期，如果过期从ActiveConnection中移除，然后创建新的PooledConnection对象放到ActiveConnection中。如果没有过期的，则进入等待状态过一会再进行上述步骤
+**连接对象的回收**
+使用完了以后对于非连接池的连接对象，调用con.close();
+对于连接池对象，也是调用close()，不过该close实际上是把连接对象还给池子里。
+这是因为我们使用的PooledConnection内部持有一个真正的Connection的实例和代理。
+当我们调用GetConnection的时候，实际上返回的是代理的连接
+当我们调用close方法时，调用了PooledDataSource.pushConnection将连接放回连接池
+### spring框架中需要引用哪些jar包，以及这些jar包的用途
+spring-core.jar
+	核心依赖包
+spring-beans.jar
+	访问配置文件、创建管理Bean、进行Ioc/DI操作的所有类
+spring-aop.jar
+	使用Spring AOP特性所需要的类和源码元数据支持。
+spring-context.jar
+	Spring核心的扩展，包括ApplicationContext等
+spring-dao.jar
+	Dao、Transaction及数据访问的所有类
+spring-jdbc.jar
+	这个jar文件包含Spring DAO以及事务进行数据访问的所有类。
+spring-orm.jar
+	DAO包的扩展
+spring-remoting.jar
+spring-support.jar
+spring-web.jar
+	使用Spring框架Web应用开发所需的核心类
+spring-webmvc.jar
+	Spring MVC所需的类
+spring-mock.jar
+	包含一整套mock类来辅助应用的测试。
+### springMVC的原理
+### spring中beanFactory和ApplicationContext的联系和区别
+BeanFactory提供了最简单的容器的功能，只提供了实例化对象和拿对象的功能
+ApplicationContext继承ListBeanFactory接口(该接口扩展了BeanFactory类)，它是Spring的一个更高级的容器，提供了更多的功能：国际化、访问资源、AOP
+ApplicationContext在启动的时候就将所有Bean实例化。而BeanFactory是lazy-load，直到使用的时候才会去实例化
+### spring注入的几种方式
+	set方法/属性注入
+	构造函数注入
+	接口注入
+	注解注入
+### spring如何实现事务管理的
+把笔记上的加进来就好
+### spring IOC & DI
+传统Java程序中，我们通过new来创建、使用对象，而在Spring中，你需要通过容器来获取、使用这些对象。
+IoC是一种思想，指导我们写出低耦合的程序。传统程序在类中主动创建依赖对象，有了IoC容器后，把创建和查找依赖对象的控制权交给了容器，由容器进行注入组合对象，所以对象与对象之间是松散耦合，这样也方便测试，利于功能复用。
+DI即依赖注入，组件之间的依赖关系由容器在运行期决定。通过DI，我们需要通过简单的配置，无需任何代码就可以指定目标需要的资源，只需要完成自身的业务逻辑而无需关注具体的资源来源或由谁实现。
+**DI理解**
+谁依赖于谁：应用程序依赖于IoC容器
+为什么需要依赖：应用程序需要IoC容器来提供对象需要的外部资源。
+谁注入谁：IoC容器注入应用程序某个对象，应用程序依赖的对象
+注入了什么：就是注入某个对象所需要的外部资源
+DI是IOC的另外一种说法
+### spring AOP的原理
+基于动态代理或者CGLib
+对于每个CutPoint给出Advice
+JdkProxyAopProxy和CgLibProxy生成代理对象，并且自身实现了InvocationHandler说明我们使用代理时对代理对象调用的方法最终都会转到这个类的invoke方法
+匹配器MethodMatcher匹配所有需要加Advice的方法，拦截器Interceptor在适当的时候拦截方法进行Advice的执行
+### hibernate中的1级和2级缓存的使用方式以及区别原理（Lazy-Load的理解）
+1级缓冲：
+	Session的缓存，当一个Session做了查询操作，他会把操作的结果先存起来，下次做同样操作的时候直接拿出来用而不是去数据库查
+2级缓存：
+	SessionFactory级别的缓存，就是查询的时候会把查询结果缓存到二级缓存中，如果同一个sessionFactory的某个session执行了同样的操作，就会去SessionFactory的二级缓存里拿而非去数据库查
+一级缓存是事务范围内的，另一个是进程范围内的
+一般只需要管理第二级缓存
+当应用程序调用Session的save、update、saveOrUpdate、get、load以及调用查询接口的list、iterate、filter方法时候，如果在session缓存的中还不存在响相应的对象，Hibernate就会把该对象加入到第一级缓存中。当清理缓存时，Hibernate会根据缓存中的对象的状态变化来同步更新数据库
+**启用二级缓存**
+hibernate.cfg.xml
+<property name="hibernate.cache.use_second_level_cache">  true  </property>
+**lazy-load**
+使用的是一级缓存，Hibernate通过Cglib代理完成延迟加载的功能的扩展
+### Hibernate的原理体系架构，五大核心接口，Hibernate对象的三种状态转换，事务管理
+https://blog.csdn.net/martinmateng/article/details/50879436
+**五大核心接口**
+Session、SessionFactory、Configuration、Transaction、Query和Criteria
+SessionFactory负责初始化Hibernate，充当数据存储源的代理并负责创建Session对象
+Session负责被持久化对象的CRUD操作，注意Session是非线程安全的
+Configuration接口负责配置并启动Hibernate，创建SessionFactory对象。
+Transaction接口负责事务相关的操作
+Query和Criteria接口：负责执行各种数据库查询，使用HQL或SQL或Criteria
+**三种状态转换**
+**事务管理**
