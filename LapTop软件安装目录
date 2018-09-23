@@ -6,30 +6,43 @@ HDD:
 	-Movies
 	-Courses
 -Pics
+	-wallpaper
 SSD: 
 -Games
-	-GameUtils
+-Utils (运行库和其他
+	-dllBackUp
+	-jBeijingV7
+	-localeEmulator
+	-VNR
+	...
 -Docs
 	-Novels
 	-Documents
 -Downloads
 -Musics
-	-SelfMusic
-		-A
-		-B
-		-Z
-			-AlbumName
+	-OtherMusic
+		-AlbumName
 			-SongName
 	-QQMusic
 	-NeteaseMusic
-	...
 -Software
 -Codes
-	-JarBackUps
+	-CodeTest
+		-C
+		-Java
+		-Py
+		-Go
+		...
+	-BackUpRepos
+		-JarBackUp
 	-maven-repository
-	-Workspaces
+	-IdeaWorkspaces
+	-ClionWorkSpaces
+	...
 -Works
 	-ProjectName
+
+
 
 Games:	
 	Battle.net(war3 + sc2 + hearthstone)、
@@ -38,7 +51,6 @@ Games:
 	NBA2k(13 + 14 + 18)、
 	Steam、
 	Touhou Project、
-	VNR、
 	Winkawks、Wegame
 Software:
 	桌面美化: https://www.zhihu.com/question/41347945/answer/90844665
