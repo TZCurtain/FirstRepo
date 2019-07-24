@@ -1,4 +1,4 @@
-@font-face {
+  @font-face {
 	font-family: 'Avenir Next LT Pro';
 	font-style: normal;
 	font-weight: normal;
@@ -247,7 +247,7 @@
   blockquote {
 	position: relative;
 	margin: 1rem 0 1rem 2rem;
-	font-family: 'Hack Nerd Font', 'Alibaba Sans Regular', serif;
+	font-family: 'Merriweather Light', sans-serif;
   }
   
   blockquote::before {
@@ -339,10 +339,10 @@
 	top: 1rem;
   }
 
-  #write h1:after{
+  #write h1::after{
 	border-bottom: 2px solid #101010;
 	content: '';
-	width: 200px;
+	width: 100px;
 	display: block;
 	margin: 0.2em auto 0 auto;
 	height: 2px;
